@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSL Manasa | Portfolio | CS Engineering (AI & ML)</title>
+    <meta name="description" content="Portfolio of Kanchibatla Sri Laxmi Manasa - Computer Science Engineering (AI & ML) student at ACE Engineering College. specializing in AI/ML, web development, and competitive programming.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
+
+    <!-- Background Accent Blobs -->
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+
+    <!-- Floating Background Code Syntax -->
+    <div class="floating-code-syntax" style="top: 12%; left: 5%;">const mlModel = await tf.loadLayersModel()</div>
+    <div class="floating-code-syntax" style="top: 28%; right: 10%;">def training_loop(epochs=100):</div>
+    <div class="floating-code-syntax" style="top: 48%; left: 8%;">import torch.nn as nn</div>
+    <div class="floating-code-syntax" style="top: 65%; right: 5%;">{ return db.query(sql); }</div>
+    <div class="floating-code-syntax" style="top: 80%; left: 4%;">std::cout &lt;&lt; "DSA Solved" &lt;&lt; std::endl;</div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" id="mainNavbar" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand text-gradient" href="#home" id="brand-logo">KSL Manasa</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <!-- Theme Toggle Button -->
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light mode">
+                            <i class="fa-solid fa-moon" id="themeIcon"></i>
+                        </button>
+                    </li>
+                    <!-- Resume Button -->
+                    <li class="nav-item ms-lg-3">
+                        <a href="javascript:void(0);" onclick="window.print();" class="btn btn-custom btn-custom-primary text-white" id="navResumeBtn">
+                            <i class="fa-solid fa-print me-2"></i>Print CV
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <!-- Text Content -->
+                <div class="col-lg-7 text-center text-lg-start mb-5 mb-lg-0">
+                    <div class="reveal active">
+                        <span class="badge-custom mb-3 d-inline-block"><i class="fa-solid fa-location-dot me-2"></i>Hyderabad, India</span>
+                        <h1 class="display-4 mb-2">Hi, I'm <span class="text-gradient">KSL Manasa</span></h1>
+                        <h2 class="h3 mb-4 text-muted-custom" style="min-height: 40px;">
+                            <span id="typed-text"></span><span class="typed-cursor">|</span>
+                        </h2>
+                        <p class="lead mb-4 text-muted-custom">
+                            Passionate Computer Science Engineering (AI & ML) student specializing in artificial intelligence, full-stack web development, and competitive programming. Dedicated to building smart, real-world solutions.
+                        </p>
+                        <!-- Social Icons -->
+                        <div class="hero-social-links mb-4">
+                            <a href="https://github.com/manasa-2k6" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/manasa-kanchibatla-b75b61326/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:manasakanchibatla@gmail.com" aria-label="Email Address">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                        </div>
+                        <!-- CTA Buttons -->
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                            <a href="#projects" class="btn btn-custom btn-custom-primary">View My Work</a>
+                            <a href="javascript:void(0);" onclick="window.print();" class="btn btn-custom btn-custom-secondary">Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Profile Image Component -->
+                <div class="col-lg-4 text-center">
+                    <div class="reveal active">
+                        <div class="profile-img-container">
+                            <div class="profile-img-glow"></div>
+                            <div class="profile-img-frame">
+                                <img src="profile.jpg" alt="Kanchibatla Sri Laxmi Manasa Profile Portrait" class="profile-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Strip Component -->
+    <section class="stats-strip" aria-label="Quick statistics">
+        <div class="container">
+            <div class="row text-center gy-4">
+                <div class="col-6 col-md-3 border-end border-md-none">
+                    <div class="stat-num" data-val="350+">0</div>
+                    <div class="stat-label">DSA Solved</div>
+                </div>
+                <div class="col-6 col-md-3 border-end-md">
+                    <div class="stat-num" data-val="9.4" data-decimals="1">0</div>
+                    <div class="stat-label">B.Tech CGPA</div>
+                </div>
+                <div class="col-6 col-md-3 border-end">
+                    <div class="stat-num" data-val="3+">0</div>
+                    <div class="stat-label">Projects Built</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-num" data-val="2">0</div>
+                    <div class="stat-label">Internships</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container my-5">
+            <h2 class="section-title text-center text-gradient">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="glass-card p-4 p-md-5 reveal">
+                        <div class="row align-items-center">
+                            <div class="col-md-5 mb-4 mb-md-0">
+                                <div class="terminal-card">
+                                    <div class="terminal-header">
+                                        <span class="terminal-dot terminal-red"></span>
+                                        <span class="terminal-dot terminal-yellow"></span>
+                                        <span class="terminal-dot terminal-green"></span>
+                                        <span class="terminal-title">manasa_profile.py</span>
+                                    </div>
+                                    <div class="terminal-body font-monospace">
+                                        <p class="mb-1"><span class="terminal-prompt">&gt;&gt;&gt;</span> print(profile.json)</p>
+                                        <p class="terminal-output">{</p>
+                                        <p class="terminal-output">&nbsp;&nbsp;"name": "KSL Manasa",</p>
+                                        <p class="terminal-output">&nbsp;&nbsp;"role": "AI &amp; ML Engineer",</p>
+                                        <p class="terminal-output">&nbsp;&nbsp;"cgpa": 9.4,</p>
+                                        <p class="terminal-output">&nbsp;&nbsp;"dsa_problems": "350+",</p>
+                                        <p class="terminal-output">&nbsp;&nbsp;"status": "Building smart systems..."</p>
+                                        <p class="terminal-output">}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <h3 class="h4 mb-3 text-gradient">Crafting Smart Technology Solutions</h3>
+                                <p class="mb-4">
+                                    I am a Computer Science Engineering (AI & ML) student at ACE Engineering College with a current cumulative CGPA of 9.4. I combine solid fundamental knowledge in Data Structures & Algorithms, Object-Oriented Programming, and DBMS with practical application development.
+                                </p>
+                                <p class="mb-0">
+                                    My portfolio spans OCR-based intelligence platforms, gamified learning, and database management tools. Beyond coding, I actively take on leadership responsibilities and engage with local developer student cohorts, organizing activities and helping bridge academic concepts with real-world builds.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-5" id="education">
+        <div class="container my-5">
+            <h2 class="section-title text-center text-gradient">Education</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline reveal">
+                        <!-- Education Item -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2024 - 2028</div>
+                            <div class="glass-card glass-card-hover p-4">
+                                <h3 class="h5 text-gradient mb-1">Bachelor of Technology (B.Tech)</h3>
+                                <h4 class="h6 text-muted-custom mb-3">Computer Science Engineering (AI & ML)</h4>
+                                <p class="small mb-2 fw-semibold text-primary"><i class="fa-solid fa-school me-2"></i>ACE Engineering College</p>
+                                <div class="d-flex flex-wrap gap-2 mt-3">
+                                    <span class="badge-custom">CGPA: 9.4/10</span>
+                                    <span class="badge-custom text-success">Highlight: 9.75 SGPA (Semester 1)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-5" id="experience">
+        <div class="container my-5">
+            <h2 class="section-title text-center text-gradient">Work Experience</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline reveal">
+                        <!-- Experience Item 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Internship</div>
+                            <div class="glass-card glass-card-hover p-4">
+                                <h3 class="h5 text-gradient mb-1">Application Developer Intern</h3>
+                                <h4 class="h6 text-muted-custom mb-3">Rubis Software Solutions Pvt. Ltd.</h4>
+                                <ul class="ps-3 mb-0">
+                                    <li class="mb-2">Contributed to application development, debugging, testing, and software quality assurance operations.</li>
+                                    <li>Collaborated with senior developers utilizing Git, GitHub, and professional agile workflows.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Experience Item 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">6 Months</div>
+                            <div class="glass-card glass-card-hover p-4">
+                                <h3 class="h5 text-gradient mb-1">Content Writing Intern</h3>
+                                <h4 class="h6 text-muted-custom mb-3">The Eloquence Club</h4>
+                                <ul class="ps-3 mb-0">
+                                    <li class="mb-2">Drafted technical articles, reports, event descriptions, campus newsletters, and student engagement materials.</li>
+                                    <li>Organized and promoted campus outreach activities, driving increased club engagement.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-5" id="projects">
+        <div class="container my-5">
+            <h2 class="section-title text-center text-gradient">Featured Projects</h2>
+            <div class="row gy-4 reveal">
+                <!-- Project 1: MediScript -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card glass-card-hover project-card">
+                        <div class="project-card-header">
+                            <div class="project-badge-container">
+                                <span class="badge-custom">AI Platform</span>
+                            </div>
+                            <i class="fa-solid fa-file-medical project-icon"></i>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="h5 mb-2 text-gradient">MediScript</h3>
+                            <p class="small text-muted-custom mb-3">AI-Powered Prescription Intelligence Platform</p>
+                            <p class="card-text mb-4">
+                                Converts handwritten medical prescriptions into structured digital text. Utilizes OCR, advanced image preprocessing pipelines, and specialized text-extraction tools to recognize medicine names accurately.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">OCR</span>
+                                <span class="project-tag">Image Processing</span>
+                                <span class="project-tag">AI/ML</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/manasa-2k6/MediScript" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                                    <i class="fa-brands fa-github"></i> GitHub Source <i class="fa-solid fa-arrow-up-right-from-square ms-1" style="font-size: 0.75rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Attendance Management System -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card glass-card-hover project-card">
+                        <div class="project-card-header">
+                            <div class="project-badge-container">
+                                <span class="badge-custom">Database Application</span>
+                            </div>
+                            <i class="fa-solid fa-calendar-check project-icon"></i>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="h5 mb-2 text-gradient">Attendance Tracker</h3>
+                            <p class="small text-muted-custom mb-3">Attendance Management System</p>
+                            <p class="card-text mb-4">
+                                Web-based attendance tracking platform integrated with an relational database. Supports admin roles, real-time records, CRUD database interactions, and analytics reports.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Web Dev</span>
+                                <span class="project-tag">SQL</span>
+                                <span class="project-tag">CRUD</span>
+                                <span class="project-tag">Database Integration</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/manasa-2k6" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                                    <i class="fa-brands fa-github"></i> GitHub Source <i class="fa-solid fa-arrow-up-right-from-square ms-1" style="font-size: 0.75rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: DevEscape -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="glass-card glass-card-hover project-card">
+                        <div class="project-card-header">
+                            <div class="project-badge-container">
+                                <span class="badge-custom">Gamified Web App</span>
+                            </div>
+                            <i class="fa-solid fa-gamepad project-icon"></i>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="h5 mb-2 text-gradient">DevEscape</h3>
+                            <p class="small text-muted-custom mb-3">Gamified Programming Challenge Platform</p>
+                            <p class="card-text mb-4">
+                                Escape-room style programming game containing levels of algorithmic code challenges. Provides game state progression, responsive client interface, and interactive editor.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">HTML</span>
+                                <span class="project-tag">CSS</span>
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">Bootstrap</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/manasa-2k6" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                                    <i class="fa-brands fa-github"></i> GitHub Source <i class="fa-solid fa-arrow-up-right-from-square ms-1" style="font-size: 0.75rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-5" id="skills">
+        <div class="container my-5">
+            <h2 class="section-title text-center text-gradient">Technical Skills</h2>
+            <div class="row justify-content-center reveal">
+                <div class="col-lg-10">
+                    <div class="glass-card p-4 p-md-5">
+                        <!-- Navigation Tabs for Skills -->
+                        <ul class="nav nav-pills justify-content-center mb-4" id="skillsTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="prog-tab" data-bs-toggle="pill" data-bs-target="#prog-content" 
+                                    type="button" role="tab" aria-controls="prog-content" aria-selected="true">Core & Web</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="db-tab" data-bs-toggle="pill" data-bs-target="#db-content" 
+                                    type="button" role="tab" aria-controls="db-content" aria-selected="false">Database & Tools</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="cs-tab" data-bs-toggle="pill" data-bs-target="#cs-content" 
+                                    type="button" role="tab" aria-controls="cs-content" aria-selected="false">Core Computer Science</button>
+                            </li>
+                        </ul>
+                        
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="skillsTabContent">
+                            <!-- Tab 1: Core & Web -->
+                            <div class="tab-pane fade show active" id="prog-content" role="tabpanel" aria-labelledby="prog-tab">
+                                <div class="row">
+                                    <div class="col-md-6 mb-4 mb-md-0">
+                                        <h3 class="skill-category-title">Programming Languages</h3>
+                                        <div class="d-flex flex-wrap">
+                                            <span class="skill-badge"><i class="fa-brands fa-python"></i> Python</span>
+                                            <span class="skill-badge"><i class="fa-brands fa-java"></i> Java</span>
+                                            <span class="skill-badge"><i class="fa-solid fa-code"></i> C Programming</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3 class="skill-category-title">Web Development</h3>
+                                        <div class="d-flex flex-wrap">
+                                            <span class="skill-badge"><i class="fa-brands fa-html5"></i> HTML5</span>
+                                            <span class="skill-badge"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                                            <span class="skill-badge"><i class="fa-brands fa-js"></i> JavaScript</span>
+                                            <span class="skill-badge"><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span>
+                                            <span class="skill-badge"><i class="fa-brands fa-react"></i> React.js</span>
+                                            <span class="skill-badge"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tab 2: Database & Tools -->
+                            <div class="tab-pane fade" id="db-content" role="tabpanel" aria-labelledby="db-tab">
+                                <div class="row">
+                                    <div class="col-md-6 mb-4 mb-md-0">
+                                        <h3 class="skill-category-title">Databases</h3>
+                                        <div class="d-flex flex-wrap">
+                                            <span class="skill-badge"><i class="fa-solid fa-database"></i> SQL (PostgreSQL/MySQL)</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3 class="skill-category-title">Tools & Environment</h3>
+                                        <div class="d-flex flex-wrap">
+                                            <span class="skill-badge"><i class="fa-brands fa-git-alt"></i> Git</span>
+                                            <span class="skill-badge"><i class="fa-brands fa-github"></i> GitHub</span>
+                                            <span class="skill-badge"><i class="fa-solid fa-terminal"></i> VS Code</span>
+                                            <span class="skill-badge"><i class="fa-solid fa-code-fork"></i> SVN</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tab 3: Core CS -->
+                            <div class="tab-pane fade" id="cs-content" role="tabpanel" aria-labelledby="cs-tab">
+                                <h3 class="skill-category-title">Core Computer Science Fundamentals</h3>
+                                <div class="row g-3">
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="glass-card p-3 text-center h-100">
+                                            <i class="fa-solid fa-cubes text-gradient mb-2" style="font-size: 1.5rem;"></i>
+                                            <h4 class="h6 mb-0">Data Structures & Algorithms</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="glass-card p-3 text-center h-100">
+                                            <i class="fa-solid fa-network-wired text-gradient mb-2" style="font-size: 1.5rem;"></i>
+                                            <h4 class="h6 mb-0">Computer Networks</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="glass-card p-3 text-center h-100">
+                                            <i class="fa-solid fa-database text-gradient mb-2" style="font-size: 1.5rem;"></i>
+                                            <h4 class="h6 mb-0">DBMS</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="glass-card p-3 text-center h-100">
+                                            <i class="fa-solid fa-laptop-code text-gradient mb-2" style="font-size: 1.5rem;"></i>
+                                            <h4 class="h6 mb-0">Object Oriented Programming</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="glass-card p-3 text-center h-100">
+                                            <i class="fa-solid fa-gears text-gradient mb-2" style="font-size: 1.5rem;"></i>
+                                            <h4 class="h6 mb-0">Operating Systems</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="glass-card p-3 text-center h-100">
+                                            <i class="fa-solid fa-diagram-project text-gradient mb-2" style="font-size: 1.5rem;"></i>
+                                            <h4 class="h6 mb-0">Software Engineering</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="py-5" id="achievements">
+        <div class="container my-5">
+            <h2 class="section-title text-center text-gradient">Achievements</h2>
+            <div class="row gy-4 reveal">
+                <!-- Achievement 1 -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="glass-card glass-card-hover achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h3 class="h5 mb-2">1st Place</h3>
+                        <p class="small text-muted-custom mb-0">Coding Competition, algorithmic problem solving</p>
+                    </div>
+                </div>
+                <!-- Achievement 2 -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="glass-card glass-card-hover achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fa-solid fa-code-commit"></i>
+                        </div>
+                        <h3 class="h5 mb-2">350+ Solved</h3>
+                        <p class="small text-muted-custom mb-0">DSA problems on CodeChef (~100 medium-to-hard)</p>
+                    </div>
+                </div>
+                <!-- Achievement 3 -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="glass-card glass-card-hover achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h3 class="h5 mb-2">Cohort 5</h3>
+                        <p class="small text-muted-custom mb-0">Infosys Pragati graduate</p>
+                    </div>
+                </div>
+                <!-- Achievement 4 -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="glass-card glass-card-hover achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h3 class="h5 mb-2">9.75 SGPA</h3>
+                        <p class="small text-muted-custom mb-0">Achieved in the first academic semester</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="py-5" id="leadership">
+        <div class="container my-5">
+            <h2 class="section-title text-center text-gradient">Leadership & Activities</h2>
+            <div class="row justify-content-center reveal">
+                <div class="col-lg-10">
+                    <div class="glass-card p-4 p-md-5">
+                        <div class="row gy-4">
+                            <div class="col-md-6 border-end-md">
+                                <div class="d-flex gap-3 align-items-start mb-4">
+                                    <div class="achievement-icon flex-shrink-0 m-0" style="width: 45px; height: 45px; font-size: 1.2rem;">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="h5 mb-1 text-gradient">Google Student Ambassador</h3>
+                                        <p class="small mb-2 fw-semibold">ACE Engineering College</p>
+                                        <p class="text-muted-custom small">Represented student interests, conducted peer coding bootcamps, and acted as a liaison for collaborative educational tech initiatives.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex gap-3 align-items-start mb-4">
+                                    <div class="achievement-icon flex-shrink-0 m-0" style="width: 45px; height: 45px; font-size: 1.2rem;">
+                                        <i class="fa-solid fa-vault"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="h5 mb-1 text-gradient">Treasurer</h3>
+                                        <p class="small mb-2 fw-semibold">ASTRA Club</p>
+                                        <p class="text-muted-custom small">Administered event allocations, structured budgeting for campus festivals and workshops, and supervised operational spending sheets.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-4 pt-2 border-top">
+                                <h3 class="h6 mb-3 text-uppercase text-gradient fw-bold" style="letter-spacing: 1px;">Active Campus Engagement</h3>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge-custom"><i class="fa-solid fa-laptop-code me-2"></i>Hackathons</span>
+                                    <span class="badge-custom"><i class="fa-solid fa-terminal me-2"></i>Coding Competitions</span>
+                                    <span class="badge-custom"><i class="fa-solid fa-microchip me-2"></i>Technical Events</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container my-5">
+            <h2 class="section-title text-center text-gradient">Get In Touch</h2>
+            <div class="row justify-content-center reveal">
+                <div class="col-lg-10">
+                    <div class="glass-card p-4 p-md-5">
+                        <div class="row gy-5">
+                            <!-- Contact Details -->
+                            <div class="col-md-5">
+                                <h3 class="h4 mb-4 text-gradient">Let's Connect</h3>
+                                <p class="mb-4 text-muted-custom">
+                                    Have a project idea, coding query, or internship opportunities? Drop me a message, and I'll get back to you!
+                                </p>
+                                <div class="contact-info-item">
+                                    <div class="contact-info-icon">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <div class="small text-muted">Email Me</div>
+                                        <a href="mailto:manasakanchibatla@gmail.com" class="fw-semibold">manasakanchibatla@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <div class="contact-info-icon">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </div>
+                                    <div>
+                                        <div class="small text-muted">LinkedIn</div>
+                                        <a href="https://www.linkedin.com/in/manasa-kanchibatla-b75b61326/" target="_blank" rel="noopener noreferrer" class="fw-semibold">manasa-kanchibatla</a>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <div class="contact-info-icon">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <div class="small text-muted">Location</div>
+                                        <span class="fw-semibold">Hyderabad, India</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Contact Form -->
+                            <div class="col-md-7">
+                                <form id="contactForm">
+                                    <div class="mb-3">
+                                        <label for="formName" class="form-label small text-muted">Full Name</label>
+                                        <input type="text" class="form-control form-control-custom" id="formName" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formEmail" class="form-label small text-muted">Email Address</label>
+                                        <input type="email" class="form-control form-control-custom" id="formEmail" placeholder="yourname@example.com" required>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="formMessage" class="form-label small text-muted">Message</label>
+                                        <textarea class="form-control form-control-custom" id="formMessage" rows="5" placeholder="Write your message here..." required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-custom btn-custom-primary w-100" id="formSubmitBtn">
+                                        Send Message <i class="fa-solid fa-paper-plane ms-2"></i>
+                                    </button>
+                                    <div class="alert alert-success mt-3 d-none" id="formSuccessAlert" role="alert">
+                                        <i class="fa-solid fa-circle-check me-2"></i> Message sent successfully!
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://github.com/manasa-2k6" target="_blank" rel="noopener noreferrer" class="mx-2 text-muted-custom hover-accent" aria-label="GitHub">
+                    <i class="fa-brands fa-github fa-lg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/manasa-kanchibatla-b75b61326/" target="_blank" rel="noopener noreferrer" class="mx-2 text-muted-custom hover-accent" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin fa-lg"></i>
+                </a>
+                <a href="mailto:manasakanchibatla@gmail.com" class="mx-2 text-muted-custom hover-accent" aria-label="Email">
+                    <i class="fa-solid fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <p class="mb-2 text-muted-custom small">© 2026 Kanchibatla Sri Laxmi Manasa. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Pet Figure Track Section -->
+    <div id="pet-track">
+        <div id="pet-ground-line"></div>
+        <div id="dev-pet" class="walking">
+            <div class="pet-bubble">BEEP BOOP!</div>
+            <!-- Custom beautiful inline SVG robot character -->
+            <svg width="70" height="70" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+                <!-- Drop shadow under wheels/feet -->
+                <ellipse cx="35" cy="58" rx="15" ry="3" fill="rgba(0, 0, 0, 0.2)" />
+                
+                <!-- Connection neck -->
+                <rect x="32" y="38" width="6" height="6" rx="2" fill="#94a3b8" />
+                
+                <!-- Left Arm -->
+                <g class="pet-arm-left">
+                    <rect x="14" y="32" width="6" height="18" rx="3" fill="url(#bodyGrad)" />
+                    <circle cx="17" cy="48" r="4" fill="#a855f7" />
+                </g>
+                
+                <!-- Right Arm -->
+                <g class="pet-arm-right">
+                    <rect x="50" y="32" width="6" height="18" rx="3" fill="url(#bodyGrad)" />
+                    <circle cx="53" cy="48" r="4" fill="#a855f7" />
+                </g>
+
+                <!-- Left Leg -->
+                <g class="pet-leg-left">
+                    <rect x="25" y="48" width="6" height="12" rx="3" fill="#94a3b8" />
+                    <!-- Little foot/wheel -->
+                    <circle cx="28" cy="58" r="4" fill="#334155" />
+                </g>
+                
+                <!-- Right Leg -->
+                <g class="pet-leg-right">
+                    <rect x="39" y="48" width="6" height="12" rx="3" fill="#94a3b8" />
+                    <!-- Little foot/wheel -->
+                    <circle cx="42" cy="58" r="4" fill="#334155" />
+                </g>
+
+                <!-- Main Body -->
+                <rect class="pet-body" x="20" y="30" width="30" height="20" rx="8" fill="url(#bodyGrad)" stroke="#1e1b4b" stroke-width="1.5" />
+                
+                <!-- Heart/Screen pattern on chest -->
+                <rect x="26" y="34" width="18" height="10" rx="2" fill="#1e293b" />
+                <circle cx="31" cy="39" r="2" fill="#14b8a6" />
+                <circle cx="39" cy="39" r="2" fill="#d946ef" />
+
+                <!-- Head Group -->
+                <g class="pet-head">
+                    <!-- Antenna -->
+                    <line x1="35" y1="20" x2="35" y2="10" stroke="#94a3b8" stroke-width="2" />
+                    <circle cx="35" cy="8" r="3" fill="#d946ef" />
+                    
+                    <!-- Ears / side bolts -->
+                    <rect x="16" y="20" width="4" height="6" rx="1" fill="#475569" />
+                    <rect x="50" y="20" width="4" height="6" rx="1" fill="#475569" />
+                    
+                    <!-- Head container -->
+                    <rect x="18" y="14" width="34" height="18" rx="6" fill="url(#headGrad)" stroke="#1e1b4b" stroke-width="1.5" />
+                    <!-- Visor/Screen -->
+                    <rect x="23" y="18" width="24" height="10" rx="4" fill="#0f172a" />
+                    
+                    <!-- Glowing Eyes -->
+                    <g class="pet-eye-glow">
+                        <circle cx="29" cy="23" r="2.5" fill="#06b6d4" />
+                        <circle cx="41" cy="23" r="2.5" fill="#06b6d4" />
+                    </g>
+                </g>
+
+                <!-- Defs for Gradients -->
+                <defs>
+                    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#6366f1" />
+                        <stop offset="100%" stop-color="#4f46e5" />
+                    </linearGradient>
+                    <linearGradient id="headGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#4f46e5" />
+                        <stop offset="100%" stop-color="#3b82f6" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Scroll To Top Button -->
+    <button class="scroll-to-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap Bundle with Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
