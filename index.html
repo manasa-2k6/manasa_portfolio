@@ -18,6 +18,15 @@
 </head>
 <body>
 
+    <!-- Terminal Typewriter Loader -->
+    <div id="loading-overlay" role="status" aria-live="polite" aria-label="Loading portfolio">
+        <div class="loader-container">
+            <div id="tw-line-1" class="tw-line"></div>
+            <div id="tw-line-2" class="tw-line"></div>
+            <div id="tw-line-3" class="tw-line"></div>
+        </div>
+    </div>
+
     <!-- Scroll Progress Indicator -->
     <div id="scroll-progress"></div>
 
@@ -26,12 +35,6 @@
     <div class="bg-blob bg-blob-2"></div>
     <div class="bg-blob bg-blob-3"></div>
 
-    <!-- Floating Background Code Syntax -->
-    <div class="floating-code-syntax" style="top: 12%; left: 5%;">const mlModel = await tf.loadLayersModel()</div>
-    <div class="floating-code-syntax" style="top: 28%; right: 10%;">def training_loop(epochs=100):</div>
-    <div class="floating-code-syntax" style="top: 48%; left: 8%;">import torch.nn as nn</div>
-    <div class="floating-code-syntax" style="top: 65%; right: 5%;">{ return db.query(sql); }</div>
-    <div class="floating-code-syntax" style="top: 80%; left: 4%;">std::cout &lt;&lt; "DSA Solved" &lt;&lt; std::endl;</div>
 
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" id="mainNavbar" aria-label="Main navigation">
@@ -106,9 +109,8 @@
                 <!-- Profile Image Component -->
                 <div class="col-lg-4 text-center">
                     <div class="reveal active">
-                        <div class="profile-img-container">
-                            <div class="profile-img-glow"></div>
-                            <div class="profile-img-frame">
+                        <div class="profile-photo-wrapper">
+                            <div class="profile-photo">
                                 <img src="profile.jpg" alt="Kanchibatla Sri Laxmi Manasa Profile Portrait" class="profile-img">
                             </div>
                         </div>

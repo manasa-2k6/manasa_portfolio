@@ -8,44 +8,44 @@
 
 /* --- Theme Variables --- */
 :root {
-    /* Dark Theme (Default) - Custom Obsidian & Neon Amethyst */
-    --bg-primary: #090810;
-    --bg-secondary: #110d20;
-    --bg-tertiary: #19142f;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent: #6366f1; /* Electric Indigo */
-    --accent-secondary: #d946ef; /* Neon Magenta */
-    --accent-teal: #14b8a6; /* Cyber Cyan */
-    --accent-gradient: linear-gradient(135deg, #6366f1, #d946ef, #14b8a6);
-    --accent-rgb: 99, 102, 241;
-    --border-color: rgba(255, 255, 255, 0.07);
-    --glass-bg: rgba(17, 13, 32, 0.65);
+    /* Dark Theme (Default) - Clean Slate Navy & Mint */
+    --bg-primary: #0a192f;
+    --bg-secondary: #112240;
+    --bg-tertiary: #1b305a;
+    --text-primary: #e6f1ff;
+    --text-secondary: #8892b0;
+    --accent: #64ffda; /* Mint Green */
+    --accent-secondary: #00f2fe; /* Cyan */
+    --accent-teal: #64ffda; /* Mint Green */
+    --accent-gradient: linear-gradient(135deg, #64ffda, #00f2fe);
+    --accent-rgb: 100, 255, 218;
+    --border-color: rgba(100, 255, 218, 0.1);
+    --glass-bg: rgba(17, 34, 64, 0.65);
     --glass-blur: blur(20px);
-    --card-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
-    --hover-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.25);
-    --glow-color: rgba(99, 102, 241, 0.2);
-    --transition-speed: 0.4s;
+    --card-shadow: 0 20px 50px -10px rgba(2, 12, 27, 0.7);
+    --hover-shadow: 0 20px 40px -10px rgba(100, 255, 218, 0.15);
+    --glow-color: rgba(100, 255, 218, 0.05);
+    --transition-speed: 0.3s;
 }
 
 [data-theme="light"] {
-    /* Light Theme - Soft Cream & Rosewater Quartz */
-    --bg-primary: #f5f3ff;
+    /* Light Theme - Soft Ice & Sky Blue */
+    --bg-primary: #f4f6f9;
     --bg-secondary: #ffffff;
-    --bg-tertiary: #ede9fe;
-    --text-primary: #1e1b4b;
-    --text-secondary: #5c54a4;
-    --accent: #4f46e5;
-    --accent-secondary: #c084fc;
-    --accent-teal: #0d9488;
-    --accent-gradient: linear-gradient(135deg, #4f46e5, #c084fc);
-    --accent-rgb: 79, 70, 229;
-    --border-color: rgba(79, 70, 229, 0.08);
+    --bg-tertiary: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent: #0ea5e9; /* Sky Blue */
+    --accent-secondary: #0d9488; /* Teal */
+    --accent-teal: #0d9488; /* Teal */
+    --accent-gradient: linear-gradient(135deg, #0ea5e9, #0d9488);
+    --accent-rgb: 14, 165, 233;
+    --border-color: rgba(14, 165, 233, 0.1);
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-blur: blur(20px);
-    --card-shadow: 0 20px 40px -15px rgba(79, 70, 229, 0.08);
-    --hover-shadow: 0 20px 45px -10px rgba(79, 70, 229, 0.18);
-    --glow-color: rgba(79, 70, 229, 0.05);
+    --card-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.05);
+    --hover-shadow: 0 20px 45px -10px rgba(14, 165, 233, 0.12);
+    --glow-color: rgba(14, 165, 233, 0.03);
 }
 
 /* --- Base & Resets --- */
@@ -67,10 +67,10 @@ body {
     overflow-x: hidden;
     transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
     background-image: 
-        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(217, 70, 239, 0.06) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(20, 184, 166, 0.06) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, rgba(139, 92, 246, 0.06) 0px, transparent 50%);
+        radial-gradient(at 0% 0%, rgba(100, 255, 218, 0.06) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(0, 242, 254, 0.04) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(100, 255, 218, 0.04) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(0, 242, 254, 0.04) 0px, transparent 50%);
     background-size: 150% 150%;
     animation: backgroundGlow 15s ease infinite alternate;
 }
@@ -346,56 +346,78 @@ a {
     align-items: center;
 }
 
-.profile-img-container {
+.profile-photo-wrapper {
     position: relative;
-    width: 290px;
-    height: 290px;
+    width: 280px;
+    height: 280px;
     margin: 0 auto;
-}
-
-.profile-img-glow {
-    position: absolute;
-    top: -15px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-secondary), var(--accent-teal));
-    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-    filter: blur(20px);
-    opacity: 0.55;
     z-index: 1;
-    animation: blob-morph 8s ease-in-out infinite alternate, pulse-glow 3s infinite alternate;
 }
 
-.profile-img-frame {
+.profile-photo {
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-    border: 6px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: var(--accent);
+    transition: transform var(--transition-speed) ease;
     overflow: hidden;
-    z-index: 2;
-    background: var(--bg-secondary);
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-    animation: blob-morph 8s ease-in-out infinite alternate;
+    box-shadow: var(--card-shadow);
 }
 
-.profile-img {
+.profile-photo::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--accent);
+    mix-blend-mode: screen;
+    opacity: 0.2;
+    transition: opacity var(--transition-speed) ease;
+    z-index: 2;
+    border-radius: 8px;
+}
+
+.profile-photo-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--accent);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: transform var(--transition-speed) ease;
+    transform: translate(15px, 15px);
+}
+
+.profile-photo-wrapper:hover::after {
+    transform: translate(10px, 10px);
+}
+
+.profile-photo-wrapper:hover .profile-photo::before {
+    opacity: 0;
+}
+
+.profile-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center top;
+    border-radius: 8px;
+    filter: grayscale(100%) contrast(1) brightness(90%);
+    transition: filter var(--transition-speed) ease;
+    mix-blend-mode: multiply;
 }
 
-@keyframes blob-morph {
-    0% { border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%; }
-    50% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-    100% { border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%; }
-}
-
-@keyframes pulse-glow {
-    0% { transform: scale(0.98); opacity: 0.4; }
-    100% { transform: scale(1.02); opacity: 0.65; }
+.profile-photo-wrapper:hover .profile-photo img {
+    filter: none;
+    mix-blend-mode: normal;
 }
 
 .hero-social-links a {
@@ -956,12 +978,85 @@ footer {
     border-color: rgba(15, 23, 42, 0.85) transparent transparent transparent;
 }
 
+/* --- Loading Overlay & Terminal Typewriter Loader --- */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    will-change: opacity;
+}
+
+@keyframes loader-enter {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.loader-container {
+    font-family: 'Space Grotesk', Courier New, monospace;
+    font-size: clamp(0.75rem, 2vw, 0.95rem);
+    line-height: 2;
+    user-select: none;
+    min-width: min(280px, 90vw);
+    max-width: 90vw;
+    overflow: hidden;
+    animation: loader-enter 0.2s ease-out forwards;
+}
+
+.tw-line {
+    white-space: pre-wrap;
+    color: var(--text-secondary);
+}
+
+.tw-prompt {
+    color: var(--accent);
+}
+
+.tw-bar-fill {
+    color: var(--accent);
+}
+
+.tw-bar-empty {
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.tw-cursor {
+    display: inline-block;
+    color: var(--accent);
+    animation: cursor-blink 0.7s step-start infinite;
+}
+
+.tw-ok {
+    color: var(--accent-teal);
+    font-weight: 600;
+    opacity: 0;
+    animation: tw-ok-appear 0.35s ease 0.05s forwards;
+}
+
+@keyframes tw-ok-appear {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 /* --- Print Stylesheet for Resume PDF generation --- */
 @media print {
     /* Hide non-resume elements */
     nav, 
     .bg-blob, 
     #scroll-progress, 
+    #loading-overlay,
     .scroll-to-top, 
     .theme-toggle-btn, 
     #navResumeBtn,

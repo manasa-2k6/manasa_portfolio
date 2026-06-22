@@ -4,6 +4,193 @@
  * ==========================================================================
  */
 
+// Terminal typewriter loader
+(function loaderInit() {
+    // Set initial busy state
+    document.documentElement.setAttribute('aria-busy', 'true');
+
+    // Skip loader for return visits in the same session
+    if (sessionStorage.getItem('manasa_loaded')) {
+        const skipLoader = () => {
+            const overlay = document.getElementById('loading-overlay');
+            if (overlay) overlay.style.display = 'none';
+            document.documentElement.removeAttribute('aria-busy');
+            window.dispatchEvent(new Event('portfolio-loaded'));
+        };
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', skipLoader, { once: true });
+        } else {
+            skipLoader();
+        }
+        return;
+    }
+
+    let sequenceDone = false;
+    let pageLoaded = false;
+    let cancelled = false;
+    let fallbackTimeoutId;
+    const loaderStartTime = Date.now();
+    const MIN_DISPLAY_MS = 1500;
+    let _realProgress = 0.05;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        _realProgress = Math.max(_realProgress, 0.45);
+    });
+
+    function dismissOverlay() {
+        clearTimeout(fallbackTimeoutId);
+        const overlay = document.getElementById('loading-overlay');
+        if (!overlay || overlay.style.display === 'none') return;
+        overlay.style.opacity = 0;
+        overlay.addEventListener('transitionend', (e) => {
+            if (e.propertyName !== 'opacity') return;
+            overlay.style.visibility = 'hidden';
+            overlay.style.display = 'none';
+            document.documentElement.removeAttribute('aria-busy');
+            sessionStorage.setItem('manasa_loaded', '1');
+            window.dispatchEvent(new Event('portfolio-loaded'));
+        }, { once: true });
+    }
+
+    function hideOverlay() {
+        if (!sequenceDone || !pageLoaded) return;
+        const elapsed = Date.now() - loaderStartTime;
+        const remaining = MIN_DISPLAY_MS - elapsed;
+        if (remaining > 0) {
+            setTimeout(hideOverlay, remaining);
+            return;
+        }
+        dismissOverlay();
+    }
+
+    function typeInto(el, text, charDelay) {
+        return new Promise(resolve => {
+            let i = 0;
+            function tick() {
+                if (cancelled || i >= text.length) { resolve(); return; }
+                el.textContent += text[i++];
+                setTimeout(tick, charDelay);
+            }
+            tick();
+        });
+    }
+
+    function animateBar(lineEl) {
+        return new Promise(resolve => {
+            const BAR_LEN = 10;
+            let displayPct = 0;
+            let waitTicks = 0;
+
+            function render() {
+                const filled = Math.floor(displayPct / 10);
+                lineEl.innerHTML =
+                    `<span class="tw-prompt">&gt;</span> loading assets... ` +
+                    `[<span class="tw-bar-fill">${'█'.repeat(filled)}</span>` +
+                    `<span class="tw-bar-empty">${'░'.repeat(BAR_LEN - filled)}</span>] ${displayPct}%` +
+                    `<span class="tw-cursor">_</span>`;
+            }
+
+            function tick() {
+                if (cancelled) {
+                    const c = lineEl.querySelector('.tw-cursor');
+                    if (c) c.remove();
+                    resolve();
+                    return;
+                }
+
+                const targetPct = _realProgress >= 1
+                    ? 100
+                    : Math.min(Math.floor(_realProgress * 100), 95);
+
+                if (displayPct >= 100) {
+                    const c = lineEl.querySelector('.tw-cursor');
+                    if (c) c.remove();
+                    resolve();
+                    return;
+                }
+
+                if (displayPct < targetPct) {
+                    const gap = targetPct - displayPct;
+                    const step = gap > 30 ? 3 : gap > 10 ? 2 : 1;
+                    displayPct = Math.min(displayPct + step, targetPct);
+                    waitTicks = 0;
+                    render();
+                    setTimeout(tick, gap > 10 ? 30 : 50);
+                } else {
+                    waitTicks++;
+                    if (waitTicks >= 2 && displayPct < 95) {
+                        displayPct++;
+                        waitTicks = 0;
+                    }
+                    render();
+                    setTimeout(tick, 150);
+                }
+            }
+
+            render();
+            tick();
+        });
+    }
+
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function runTypewriter() {
+        try {
+            const line1 = document.getElementById('tw-line-1');
+            const line2 = document.getElementById('tw-line-2');
+            if (!line1 || !line2) return;
+
+            line1.innerHTML = '<span class="tw-prompt">&gt; </span><span id="tw-t1"></span><span class="tw-cursor" id="tw-cur">_</span>';
+            const typed1 = document.getElementById('tw-t1');
+            const cursor = document.getElementById('tw-cur');
+
+            await typeInto(typed1, 'initializing portfolio...', 45);
+            if (cursor) cursor.remove();
+
+            await delay(300);
+            await animateBar(line2);
+
+            if (cancelled) return;
+
+            const line3 = document.getElementById('tw-line-3');
+            if (!line3) return;
+
+            line3.innerHTML = '<span class="tw-prompt">&gt; </span><span id="tw-t3"></span><span class="tw-cursor">_</span>';
+            const typed3 = document.getElementById('tw-t3');
+
+            await typeInto(typed3, 'portfolio ready ', 38);
+            const cur3 = line3.querySelector('.tw-cursor');
+            if (cur3) cur3.remove();
+            typed3.insertAdjacentHTML('afterend', '<span class="tw-ok">[OK]</span>');
+
+            await delay(600);
+        } finally {
+            sequenceDone = true;
+            hideOverlay();
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runTypewriter);
+    } else {
+        runTypewriter();
+    }
+
+    window.addEventListener('load', () => {
+        pageLoaded = true;
+        _realProgress = 1;
+        hideOverlay();
+    });
+
+    // Fallback timeout to ensure page never hangs
+    fallbackTimeoutId = setTimeout(() => {
+        cancelled = true;
+        dismissOverlay();
+    }, 5000);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- 1. Theme Management (Dark / Light Mode) ---
     const themeToggle = document.getElementById('themeToggle');
@@ -109,8 +296,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Start Typewriter
-    if (roles.length) setTimeout(type, 1000);
+    // Start Typewriter after portfolio loader is finished
+    if (roles.length) {
+        window.addEventListener('portfolio-loaded', () => {
+            setTimeout(type, 500);
+        });
+    }
 
 
     // --- 4. Scroll Reveal Animations & Nav Link Highlighter ---
